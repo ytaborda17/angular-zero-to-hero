@@ -1,0 +1,47 @@
+<h3>{{title}}</h3>
+
+<strong>Empleado estrella:</strong>
+<ul>
+   <li>{{empleado.nombre}}</li>
+   <li>{{empleado.edad}}</li>
+   <li>{{empleado.cargo}}</li>
+   <li>{{empleado.contratado == true ? 'Contratado' : 'Retirado'}}</li>
+</ul>
+<br>
+<hr>
+<strong>Otros:</strong>
+<div *ngFor="let trabajador of (trabajadores); let i = index">
+   <strong>Empleado #{{i+1}}</strong>
+   <ul>
+      <li>{{trabajador.nombre}}</li>
+      <li>{{trabajador.edad}}</li>
+      <li>{{trabajador.cargo}}</li>
+      <li>{{trabajador.contratado == true ? 'Contratado' : 'No esta contratado'}}</li>
+   </ul>
+</div>
+<hr>
+
+<h4>Selector de colores:</h4>
+<div style="width: 200px; height: 200px; padding-right: 20px; display: inline-block; background: color_seleccionado; vertical-align: top">
+   <input type="text" [(ngModel)]="color_seleccionado"/>
+   <!--El ngClass tambien se le puede pasar una lista con los nombres de las clases-->
+   <pre 
+      [style.border]="color_seleccionado === 'red' ? '2px solid red' : '2px solid white'"
+      [class.fondoAzul]="color_seleccionado === 'blue'"
+      [ngClass]="{
+         fondoVerde: color_seleccionado === 'green',
+         fondoAmarillo: color_seleccionado === 'yellow'
+      }"
+   >
+      <strong>Color seleccionado:</strong>
+      <br>
+      {{color_seleccionado}}
+   </pre>
+</div>
+<div [ngStyle]="{
+   'background': color_seleccionado,
+   'width': '200px',
+   'height': '200px',
+   'margin-left': '20px',
+   'display': 'inline-block'
+}"></div>
