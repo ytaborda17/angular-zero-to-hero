@@ -293,6 +293,7 @@
       visibility: hidden;
     }
   }
+
 </style>
 
 <!-- Toolbar -->
@@ -325,8 +326,14 @@
     
   </a>
 </div>
-
 <div class="content" role="main">
+    <nav>
+      <a routerLink="home" routerLinkActive="menu-active">Inicio</a> | 
+      <a routerLink="/fruta" routerLinkActive="menu-active">Fruta</a> | 
+      <a routerLink="/empleado" routerLinkActive="menu-active">Empleado</a> | 
+      <a routerLink="/tree-root" routerLinkActive="menu-active">Arbol</a> | 
+      <a routerLink="/contact" routerLinkActive="menu-active">Contacto</a>  
+    </nav>
 
   <h1>{{title}}</h1>
 
@@ -345,6 +352,6 @@
 <router-outlet></router-outlet>
 
 
-<!--<div *ngIf="mostrar_fruta"><fruta></fruta></div>-->
+<!--<div *ngIf="mostrarFruta"><fruta></fruta></div>-->
 
 <!--<empleado-tag></empleado-tag>-->
